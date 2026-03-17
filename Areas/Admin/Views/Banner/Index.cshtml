@@ -1,0 +1,34 @@
+﻿@model List<ResultBannerDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Banner</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Admin/Banner/DeleteBanner/@item.BannerId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/Banner/UpdateBanner/@item.BannerId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Banner/CreateBanner" class="btn btn-primary">Add Banner</a>
+
+

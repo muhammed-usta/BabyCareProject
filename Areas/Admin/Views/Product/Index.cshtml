@@ -1,0 +1,52 @@
+﻿@model List<ResultProductDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+
+}
+
+<h3>Products</h3>
+@{
+    int count = 0;
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Product Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Capacity</th>
+        <th>Lesson Count</th>
+        <th>Duration</th>
+        <th>Instructor</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="height:75px;width:75px;" /> </td>
+           
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Price ₺</td>
+            <td>@item.Capacity</td>
+            <td>@item.LessonCount</td>
+            <td>@item.Duration</td>
+            <td>@item.InstructorName</td>
+            <td>
+                <a href="/Admin/Product/DeleteProduct/@item.ProductId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/Product/UpdateProduct/@item.ProductId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Product/CreateProduct" class="btn btn-primary" >Add new Product</a>
+
+
+
+

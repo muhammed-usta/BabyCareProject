@@ -1,0 +1,47 @@
+﻿@model CreateEventDto
+@{
+    ViewData["Title"] = "CreateEvent";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+<h1>CreateEvent</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <label for="ImageFile" class="form-label fw-bold">Upload Image</label>
+    <input type="file" id="ImageFile" asp-for="ImageFile" name="ImageFile" accept="image/png, image/jpg, image/jpeg" class="form-control" />
+    <img id="imagePreview" src="" alt="Image Preview" class="img-fluid mt-2 d-none" style="max-height: 200px;" />
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <label>Location</label>
+    <input type="text" asp-for="Location" class="form-control" />
+    <br />
+
+    <label>Date</label>
+    <input type="date" asp-for="Date" class="form-control" />
+    <br />
+
+    <label>Start Time</label>
+    <input type="time" asp-for="StartTime" class="form-control" />
+    <br />
+
+    <label>End Time</label>
+    <input type="time" asp-for="EndTime" class="form-control" />
+    <br />
+
+
+
+    <button class=" btn btn-primary">Submit</button>
+</form>
+
+
+
+

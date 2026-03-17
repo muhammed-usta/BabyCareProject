@@ -1,0 +1,42 @@
+﻿@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Contact</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Footer Description</th>
+        <th>Adress</th>
+        <th>Phone</th>
+        <th>Mail</th>
+        <th>Working Hour</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th>@item.FooterDescription</th>
+            <td>@item.Adress</td>
+            <td>@item.Phone</td>
+            <td>@item.Mail</td>
+            <td>@item.WorkingHour</td>
+            <td>
+                <a href="/Admin/Contact/DeleteContact/@item.ContactId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/Contact/UpdateContact/@item.ContactId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Contact/CreateContact" class="btn btn-primary">Add Contact</a>
+
+
+

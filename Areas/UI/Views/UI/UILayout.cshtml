@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    @await Component.InvokeAsync("_HeadViewComponent")
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Navbar start -->
+    @await Component.InvokeAsync("_NavbarViewComponent")
+
+
+    <!-- Navbar End -->
+    
+    <!-- Hero Start -->
+    @await Component.InvokeAsync("_BannerViewComponent")
+
+    <!-- Hero End -->
+    <!-- About Start -->
+    @await Component.InvokeAsync("_AboutViewComponent")
+    <!-- About End -->
+    <!-- Service Start -->
+    @await Component.InvokeAsync("_ServiceViewComponent")
+   
+    <!-- Service End -->
+    <!-- Programs Start -->
+
+    @await Component.InvokeAsync("_ProductViewComponent")
+    <!-- Program End -->
+    <!-- Events Start -->
+
+    @await Component.InvokeAsync("_EventViewComponent")
+    <!-- Events End-->
+   
+    <!-- Team Start-->
+    @await Component.InvokeAsync("_InstructorViewComponent")
+  
+    <!-- Team End-->
+    <!-- Testimonial Start -->
+    @await Component.InvokeAsync("_TestimonialViewComponent")
+    
+    <!-- Testimonial End -->
+    <!-- Footer Start -->
+    @await Component.InvokeAsync("_FooterViewComponent")
+
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    @await Component.InvokeAsync("_CopyrightViewComponent")
+   
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+  
+    @await Component.InvokeAsync("_ScriptViewComponent")
+</body>
+
+</html>

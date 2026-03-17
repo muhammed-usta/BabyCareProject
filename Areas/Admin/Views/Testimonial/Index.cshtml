@@ -1,0 +1,47 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Testimonials</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Title</th>
+        <th>Comment</th>
+        <th>Reviews</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="height:75px;width:75px;" /> </td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Title</td>
+            <td>@item.Comment</td>
+            <td>@item.Reviews</td>
+            <td>
+                <a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Testimonial/CreateTestimonial" class="btn btn-primary">Add Testimonial</a>
+
+
+
+
+
+

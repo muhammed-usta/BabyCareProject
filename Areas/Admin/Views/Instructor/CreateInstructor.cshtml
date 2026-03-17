@@ -1,0 +1,46 @@
+﻿@model CreateInstructorDto
+@{
+    ViewData["Title"] = "CreateInstructor";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+
+}
+
+<h3>CreateInstructor</h3>
+
+<form method="post" enctype="multipart/form-data">
+
+    <label for="ImageFile" class="form-label fw-bold">Upload Image</label>
+    <input type="file" id="ImageFile" asp-for="ImageFile" name="ImageFile" accept="image/png, image/jpg, image/jpeg" class="form-control" />
+    <img id="imagePreview" src="" alt="Image Preview" class="img-fluid mt-2 d-none" style="max-height: 200px;" />
+    <br />
+
+
+    <label>Name</label>
+    <input type="text" asp-for="FirstName" class="form-control" />
+    <br />
+
+    <label>Surname</label>
+    <input type="text" asp-for="LastName" class="form-control" />
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Social 1</label>
+    <input type="text" asp-for="Social1" class="form-control" />
+    <br />
+
+
+    <label>Social 2</label>
+    <input type="text" asp-for="Social2" class="form-control" />
+    <br />
+
+    <label>Social 3</label>
+    <input type="text" asp-for="Social3" class="form-control" />
+    <br />
+
+
+
+    <button class=" btn btn-primary">Submit</button>
+</form>

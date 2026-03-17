@@ -1,0 +1,36 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+    int count=0;
+}
+
+<h3>Services</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Icon</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td> <i class="@item.Icon"></i> </td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Admin/Service/DeleteService/@item.ServiceId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/Service/UpdateService/@item.ServiceId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Service/CreateService" class="btn btn-primary">Add Service</a>
+

@@ -1,0 +1,44 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>About Us</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Item</th>
+        <th>Video Url</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                @if (item.Items != null && item.Items.Length > 0)
+                {
+                    @string.Join(", ", item.Items)
+                }
+            </td>
+
+            <td>@item.VideoUrl</td>
+            <td>
+                <a href="/Admin/About/DeleteAbout/@item.AboutId" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-info"><i class="fa fa-pen"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/About/CreateAbout" class="btn btn-primary">Add new About Us</a>
+

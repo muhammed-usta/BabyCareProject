@@ -1,0 +1,52 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+<h1>Update Testimonial</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="TestimonialId" />
+    <input type="hidden" asp-for="ImageUrl" />
+    <label for="ImageFile" class="form-label fw-bold">Upload Image</label>
+    <input type="file" id="ImageFile" asp-for="ImageFile" name="ImageFile" accept="image/png, image/jpg, image/jpeg" class="form-control" />
+    <img id="imagePreview" src="" alt="Image Preview" class="img-fluid mt-2 d-none" style="max-height: 200px;" />
+    <br />
+
+    <label>Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+
+    <label>Surname</label>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Comment</label>
+    <input type="text" asp-for="Comment" class="form-control" />
+    <br />
+
+    <label>Review</label>
+    <select class="form-control" asp-for="Reviews">
+        <option selected disabled>Make your choice</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+
+    </select>
+
+    <br />
+
+
+    <button class=" btn btn-primary">Submit</button>
+</form>
+
+
+

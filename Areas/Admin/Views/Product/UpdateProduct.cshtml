@@ -1,0 +1,55 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+<h1>Update Product</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ProductId" />
+    <input type="hidden" asp-for="ImageUrl" />
+    <label for="ImageFile" class="form-label fw-bold">Upload Image</label>
+    <input type="file" id="ImageFile" asp-for="ImageFile" name="ImageFile" accept="image/png, image/jpg, image/jpeg" class="form-control" />
+    <img id="imagePreview" src="" alt="Image Preview" class="img-fluid mt-2 d-none" style="max-height: 200px;" />
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Description</label>
+    <textarea type="text" asp-for="Description" class="form-control" rows="4"></textarea>
+    <br />
+
+    <label>Price</label>
+    <input type="number" asp-for="Price" class="form-control" />
+    <br />
+
+    <label>Capacity</label>
+    <input type="number" asp-for="Capacity" class="form-control" />
+    <br />
+
+    <label>LessonCount</label>
+    <input type="number" asp-for="LessonCount" class="form-control" />
+    <br />
+
+    <label>Duration</label>
+    <input type="number" asp-for="Duration" class="form-control" />
+    <br />
+
+    <label>Instructor</label>
+    <select asp-for="InstructorName" asp-items="@ViewBag.instructors" class="form-control">
+        <option disabled selected>Select Instructor</option>
+    </select>
+    <br />
+
+
+
+    <button class="btn btn-primary">Update</button>
+</form>
+
+
+
+
