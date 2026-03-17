@@ -37,6 +37,8 @@ Teknoloji	Açıklama
 
 📦 Temiz ve okunabilir kod organizasyonu
 
+
+
 <img width="1920" height="1080" alt="Ekran Görüntüsü (19)" src="https://github.com/user-attachments/assets/495700dc-a60e-4e88-b41a-6ba8b7e6ceca" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (47)" src="https://github.com/user-attachments/assets/2cc83699-a030-427b-93f0-067251a9f53f" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (48)" src="https://github.com/user-attachments/assets/52dedd7b-e1bf-4586-981e-81c2f3bb6215" />
